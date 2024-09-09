@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.register-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-popup-container {
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  padding: 0 10px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  
+}
+
+.register-popup-container-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-form-label {
+  display: flex;
+  flex-direction: row;
+  min-width: 200px;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.register-popup-button {
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
