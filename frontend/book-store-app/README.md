@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Book Store Application (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Author: Vincent Heggermont
 
-## Available Scripts
+# Table of contents
 
-In the project directory, you can run:
+-   [Frontend Application](#frontend-application)
+    -   [Prerequisites](#prerequisites-1)
+    -   [How to use the frontend application](#how-to-use-the-frontend-application)
+    -   [How the application works](#how-the-application-works)
 
-### `npm start`
+## Frontend Application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The front-end application has been build using React.js
+The only depencies added to the project are
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   axios : for the REST calls
+-   react-icons : to include some icons in the page
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before running this project, ensure you have the following installed on your machine:
 
-### `npm run build`
+-   Node.js
+-   npm (or yarn)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This development has been made with the following versions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+node version : v20.11.0
+npm version : 10.2.4
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### How to use the frontend application
 
-### `npm run eject`
+-   clone the repository
+-   update the .env file with the location of your backend services (host and port)
+-   open a terminal and go to the root of the application (`book-store-app` folder)
+-   install the dependencies
+    -   using npm : `npm install`
+    -   using yarn : `yarn install`
+-   start the application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    -   using npm : `npm start`
+    -   using yarn : `yarn start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    By default, the application will run on http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### How the application works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The book store allows the connected users to order books.
 
-## Learn More
+The catalog presents the list of books corresponding the the search criteria (book title or book author). This search is case insensitive and corresponds to a "title/author contains the criteria".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application user can browse the catalog, without being connected, but cannot order a book.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The new users can register the application, using the Register button in the header.  
+Users can Sign in the application using the Sign In button in the header.
 
-### Code Splitting
+When the user orders a book, by clicking on the icon in the catalog, the book is added to the cart. If the same book was already in the cart, the quantity is incremented.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The user can visualize the list of books added to the cart, and can change que quantity of each book, using the buttons "+" to add an examplar of a book, "-" to remove remove an examplar book or the "trash bin" to remove all examplars of a book
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+When the user clicks on the Buy button in the shopping cart, the order is placed with the list of books and their quantities.  
+The user is redirected to a confirmation screen presenting the order id and the list of ordered books.  
+In case of problem, the confirmation screen will present the error message.
